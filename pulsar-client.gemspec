@@ -1,34 +1,29 @@
 # frozen_string_literal: true
 
-require_relative "lib/pulsar/client/version"
+require_relative 'lib/pulsar/client/version'
 
 Gem::Specification.new do |spec|
-  spec.name = "pulsar-client"
+  spec.name = 'pulsar-client'
   spec.version = Pulsar::Client::VERSION
-  spec.authors = ["tison"]
-  spec.email = ["wander4096@gmail.com"]
+  spec.author = 'Apache Pulsar Contributors'
+  spec.email = 'dev@pulsar.apache.org'
+  spec.license = 'Apache-2.0'
+  spec.summary = 'Apache Pulsar native client for Ruby'
+  spec.description = spec.summary
+  spec.homepage = 'https://pulsar.apache.org/'
+  spec.required_ruby_version = '>= 2.6.0'
 
-  spec.summary = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description = "TODO: Write a longer description or delete this line."
-  spec.homepage = "TODO: Put your gem's website or public repo URL here."
-  spec.required_ruby_version = ">= 2.6.0"
-
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
-
-  spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata['homepage_uri'] = spec.homepage
+  spec.metadata['source_code_uri'] = 'https://github.com/apache/pulsar-client-ruby'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
-  spec.files = Dir.chdir(__dir__) do
-    `git ls-files -z`.split("\x0").reject do |f|
-      (f == __FILE__) || f.match(%r{\A(?:(?:bin|test|spec|features)/|\.(?:git|travis|circleci)|appveyor)})
-    end
-  end
-  spec.bindir = "exe"
-  spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.files = %w[Gemfile Rakefile LICENSE README.md] +
+               Dir.glob('{lib,spec}/**/*', File::FNM_DOTMATCH).reject { |f| File.directory?(f) } +
+               Dir.glob('*.gemspec')
+  spec.bindir = 'bin'
+  spec.executables = %w[]
+  spec.require_paths = %w[lib]
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
