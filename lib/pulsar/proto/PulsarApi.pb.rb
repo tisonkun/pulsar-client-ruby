@@ -21,68 +21,68 @@ module Pulsar
     end
 
     class ProducerAccessMode < ::Protobuf::Enum
-      define :Shared, 0
-      define :Exclusive, 1
-      define :WaitForExclusive, 2
-      define :ExclusiveWithFencing, 3
+      define :SHARED, 0
+      define :EXCLUSIVE, 1
+      define :WAITFOREXCLUSIVE, 2
+      define :EXCLUSIVEWITHFENCING, 3
     end
 
     class ServerError < ::Protobuf::Enum
-      define :UnknownError, 0
-      define :MetadataError, 1
-      define :PersistenceError, 2
-      define :AuthenticationError, 3
-      define :AuthorizationError, 4
-      define :ConsumerBusy, 5
-      define :ServiceNotReady, 6
-      define :ProducerBlockedQuotaExceededError, 7
-      define :ProducerBlockedQuotaExceededException, 8
-      define :ChecksumError, 9
-      define :UnsupportedVersionError, 10
-      define :TopicNotFound, 11
-      define :SubscriptionNotFound, 12
-      define :ConsumerNotFound, 13
-      define :TooManyRequests, 14
-      define :TopicTerminatedError, 15
-      define :ProducerBusy, 16
-      define :InvalidTopicName, 17
-      define :IncompatibleSchema, 18
-      define :ConsumerAssignError, 19
-      define :TransactionCoordinatorNotFound, 20
-      define :InvalidTxnStatus, 21
-      define :NotAllowedError, 22
-      define :TransactionConflict, 23
-      define :TransactionNotFound, 24
-      define :ProducerFenced, 25
+      define :UNKNOWNERROR, 0
+      define :METADATAERROR, 1
+      define :PERSISTENCEERROR, 2
+      define :AUTHENTICATIONERROR, 3
+      define :AUTHORIZATIONERROR, 4
+      define :CONSUMERBUSY, 5
+      define :SERVICENOTREADY, 6
+      define :PRODUCERBLOCKEDQUOTAEXCEEDEDERROR, 7
+      define :PRODUCERBLOCKEDQUOTAEXCEEDEDEXCEPTION, 8
+      define :CHECKSUMERROR, 9
+      define :UNSUPPORTEDVERSIONERROR, 10
+      define :TOPICNOTFOUND, 11
+      define :SUBSCRIPTIONNOTFOUND, 12
+      define :CONSUMERNOTFOUND, 13
+      define :TOOMANYREQUESTS, 14
+      define :TOPICTERMINATEDERROR, 15
+      define :PRODUCERBUSY, 16
+      define :INVALIDTOPICNAME, 17
+      define :INCOMPATIBLESCHEMA, 18
+      define :CONSUMERASSIGNERROR, 19
+      define :TRANSACTIONCOORDINATORNOTFOUND, 20
+      define :INVALIDTXNSTATUS, 21
+      define :NOTALLOWEDERROR, 22
+      define :TRANSACTIONCONFLICT, 23
+      define :TRANSACTIONNOTFOUND, 24
+      define :PRODUCERFENCED, 25
     end
 
     class AuthMethod < ::Protobuf::Enum
-      define :AuthMethodNone, 0
-      define :AuthMethodYcaV1, 1
-      define :AuthMethodAthens, 2
+      define :AUTHMETHODNONE, 0
+      define :AUTHMETHODYCAV1, 1
+      define :AUTHMETHODATHENS, 2
     end
 
     class ProtocolVersion < ::Protobuf::Enum
-      define :v0, 0
-      define :v1, 1
-      define :v2, 2
-      define :v3, 3
-      define :v4, 4
-      define :v5, 5
-      define :v6, 6
-      define :v7, 7
-      define :v8, 8
-      define :v9, 9
-      define :v10, 10
-      define :v11, 11
-      define :v12, 12
-      define :v13, 13
-      define :v14, 14
-      define :v15, 15
-      define :v16, 16
-      define :v17, 17
-      define :v18, 18
-      define :v19, 19
+      define :V0, 0
+      define :V1, 1
+      define :V2, 2
+      define :V3, 3
+      define :V4, 4
+      define :V5, 5
+      define :V6, 6
+      define :V7, 7
+      define :V8, 8
+      define :V9, 9
+      define :V10, 10
+      define :V11, 11
+      define :V12, 12
+      define :V13, 13
+      define :V14, 14
+      define :V15, 15
+      define :V16, 16
+      define :V17, 17
+      define :V18, 18
+      define :V19, 19
     end
 
     class KeySharedMode < ::Protobuf::Enum
@@ -101,27 +101,27 @@ module Pulsar
     #
     class Schema < ::Protobuf::Message
       class Type < ::Protobuf::Enum
-        define :None, 0
-        define :String, 1
-        define :Json, 2
-        define :Protobuf, 3
-        define :Avro, 4
-        define :Bool, 5
-        define :Int8, 6
-        define :Int16, 7
-        define :Int32, 8
-        define :Int64, 9
-        define :Float, 10
-        define :Double, 11
-        define :Date, 12
-        define :Time, 13
-        define :Timestamp, 14
-        define :KeyValue, 15
-        define :Instant, 16
-        define :LocalDate, 17
-        define :LocalTime, 18
-        define :LocalDateTime, 19
-        define :ProtobufNative, 20
+        define :NONE, 0
+        define :STRING, 1
+        define :JSON, 2
+        define :PROTOBUF, 3
+        define :AVRO, 4
+        define :BOOL, 5
+        define :INT8, 6
+        define :INT16, 7
+        define :INT32, 8
+        define :INT64, 9
+        define :FLOAT, 10
+        define :DOUBLE, 11
+        define :DATE, 12
+        define :TIME, 13
+        define :TIMESTAMP, 14
+        define :KEYVALUE, 15
+        define :INSTANT, 16
+        define :LOCALDATE, 17
+        define :LOCALTIME, 18
+        define :LOCALDATETIME, 19
+        define :PROTOBUFNATIVE, 20
       end
 
     end
@@ -143,15 +143,15 @@ module Pulsar
     class KeySharedMeta < ::Protobuf::Message; end
     class CommandSubscribe < ::Protobuf::Message
       class SubType < ::Protobuf::Enum
-        define :Exclusive, 0
-        define :Shared, 1
-        define :Failover, 2
-        define :Key_Shared, 3
+        define :EXCLUSIVE, 0
+        define :SHARED, 1
+        define :FAILOVER, 2
+        define :KEY_SHARED, 3
       end
 
       class InitialPosition < ::Protobuf::Enum
-        define :Latest, 0
-        define :Earliest, 1
+        define :LATEST, 0
+        define :EARLIEST, 1
       end
 
     end
@@ -159,8 +159,8 @@ module Pulsar
     class CommandPartitionedTopicMetadata < ::Protobuf::Message; end
     class CommandPartitionedTopicMetadataResponse < ::Protobuf::Message
       class LookupType < ::Protobuf::Enum
-        define :Success, 0
-        define :Failed, 1
+        define :SUCCESS, 0
+        define :FAILED, 1
       end
 
     end
@@ -168,9 +168,9 @@ module Pulsar
     class CommandLookupTopic < ::Protobuf::Message; end
     class CommandLookupTopicResponse < ::Protobuf::Message
       class LookupType < ::Protobuf::Enum
-        define :Redirect, 0
-        define :Connect, 1
-        define :Failed, 2
+        define :REDIRECT, 0
+        define :CONNECT, 1
+        define :FAILED, 2
       end
 
     end
@@ -182,16 +182,16 @@ module Pulsar
     class CommandMessage < ::Protobuf::Message; end
     class CommandAck < ::Protobuf::Message
       class AckType < ::Protobuf::Enum
-        define :Individual, 0
-        define :Cumulative, 1
+        define :INDIVIDUAL, 0
+        define :CUMULATIVE, 1
       end
 
       class ValidationError < ::Protobuf::Enum
-        define :UncompressedSizeCorruption, 0
-        define :DecompressionError, 1
-        define :ChecksumMismatch, 2
-        define :BatchDeSerializeError, 3
-        define :DecryptionError, 4
+        define :UNCOMPRESSEDSIZECORRUPTION, 0
+        define :DECOMPRESSIONERROR, 1
+        define :CHECKSUMMISMATCH, 2
+        define :BATCHDESERIALIZEERROR, 3
+        define :DECRYPTIONERROR, 4
       end
 
     end
@@ -472,7 +472,7 @@ module Pulsar
       repeated ::Pulsar::Proto::KeyValue, :metadata, 10
       optional :bool, :read_compacted, 11
       optional ::Pulsar::Proto::Schema, :schema, 12
-      optional ::Pulsar::Proto::CommandSubscribe::InitialPosition, :initialPosition, 13, :default => ::Pulsar::Proto::CommandSubscribe::InitialPosition::Latest
+      optional ::Pulsar::Proto::CommandSubscribe::InitialPosition, :initialPosition, 13, :default => ::Pulsar::Proto::CommandSubscribe::InitialPosition::LATEST
       optional :bool, :replicate_subscription_state, 14
       optional :bool, :force_topic_creation, 15, :default => true
       optional :uint64, :start_message_rollback_duration_sec, 16, :default => 0
@@ -528,7 +528,7 @@ module Pulsar
       optional ::Pulsar::Proto::Schema, :schema, 7
       optional :uint64, :epoch, 8, :default => 0
       optional :bool, :user_provided_producer_name, 9, :default => true
-      optional ::Pulsar::Proto::ProducerAccessMode, :producer_access_mode, 10, :default => ::Pulsar::Proto::ProducerAccessMode::Shared
+      optional ::Pulsar::Proto::ProducerAccessMode, :producer_access_mode, 10, :default => ::Pulsar::Proto::ProducerAccessMode::SHARED
       optional :uint64, :topic_epoch, 11
       optional :bool, :txn_enabled, 12, :default => false
       optional :string, :initial_subscription_name, 13

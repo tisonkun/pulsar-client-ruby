@@ -7,6 +7,7 @@ load 'protobuf/tasks/compile.rake'
 
 desc 'Generate protobuf code.'
 task :compile do
+  ENV['PB_UPCASE_ENUMS'] = 'true'
   ::Rake::Task['protobuf:compile'].invoke(
     'pulsar/proto',
     'definitions',
