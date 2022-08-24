@@ -3,6 +3,7 @@ AllCops:
   TargetRubyVersion: 2.6
   Exclude:
     - 'lib/pulsar/proto/PulsarApi.pb.rb'
+    - 'vendor/**/*'
 
 Layout/LineLength:
   Max: 120
