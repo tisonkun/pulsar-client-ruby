@@ -1,6 +1,8 @@
 AllCops:
   NewCops: enable
   TargetRubyVersion: 2.6
+  Exclude:
+    - 'lib/pulsar/proto/PulsarApi.pb.rb'
 
 Layout/LineLength:
   Max: 120
