@@ -6,11 +6,11 @@ Apache Pulsar native client for Ruby.
 
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add pulsar-client
+    $ bundle add pulsar-client-more
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install pulsar-client
+    $ gem install pulsar-client-more
 
 ## Usage
 
