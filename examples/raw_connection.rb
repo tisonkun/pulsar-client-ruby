@@ -38,6 +38,17 @@ bytes += command_pb
 socket.write(bytes)
 
 # 4. Read response (CommandConnected)
-results = socket.read
-proto = Pulsar::Proto::BaseCommand.decode(results[4..])
+def read_size(socket)
+  bytes = socket.read(4)
+  bytes&.unpack('N')&.first
+end
+
+frame_size = read_size(socket)
+puts "frame_size: #{frame_size}"
+
+cmd_size = read_size(socket)
+puts "cmd_size: #{cmd_size}"
+
+results = socket.read(cmd_size)
+proto = Pulsar::Proto::BaseCommand.decode(results)
 puts proto.to_json
