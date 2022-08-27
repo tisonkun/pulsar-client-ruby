@@ -26,8 +26,15 @@ Gem::Specification.new do |spec|
   spec.executables = %w[]
   spec.require_paths = %w[lib]
 
-  # Uncomment to register a new dependency of your gem
-  # spec.add_dependency "example-gem", "~> 1.0"
+  spec.platform = Gem::Platform::RUBY
+
+  spec.add_dependency 'protobuf', '~> 3.10'
+
+  spec.add_development_dependency 'rake', '~> 13.0'
+  spec.add_development_dependency 'rspec', '~> 3.6'
+  spec.add_development_dependency 'rubocop', '~> 1.35'
+  spec.add_development_dependency 'rubocop-rake', '~> 0.6'
+  spec.add_development_dependency 'rubocop-rspec', '~> 2.12'
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
