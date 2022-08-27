@@ -68,7 +68,7 @@ GEM
     unicode-display_width (2.2.0)
 
 PLATFORMS
-  ruby
+  arm64-darwin-21
 
 DEPENDENCIES
   protobuf (~> 3.10)
