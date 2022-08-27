@@ -240,29 +240,29 @@ enum AuthMethod {
 // Each protocol version identify new features that are
 // incrementally added to the protocol
 enum ProtocolVersion {
-    v0 = 0;  // Initial versioning
-    v1 = 1;  // Added application keep-alive
-    v2 = 2;  // Added RedeliverUnacknowledgedMessages Command
-    v3 = 3;  // Added compression with LZ4 and ZLib
-    v4 = 4;  // Added batch message support
-    v5 = 5;  // Added disconnect client w/o closing connection
-    v6 = 6;  // Added checksum computation for metadata + payload
-    v7 = 7;  // Added CommandLookupTopic - Binary Lookup
-    v8 = 8;  // Added CommandConsumerStats - Client fetches broker side consumer stats
-    v9 = 9;  // Added end of topic notification
-    v10 = 10;// Added proxy to broker
-    v11 = 11;// C++ consumers before this version are not correctly handling the checksum field
-    v12 = 12;// Added get topic's last messageId from broker
+    V0 = 0;  // Initial versioning
+    V1 = 1;  // Added application keep-alive
+    V2 = 2;  // Added RedeliverUnacknowledgedMessages Command
+    V3 = 3;  // Added compression with LZ4 and ZLib
+    V4 = 4;  // Added batch message support
+    V5 = 5;  // Added disconnect client w/o closing connection
+    V6 = 6;  // Added checksum computation for metadata + payload
+    V7 = 7;  // Added CommandLookupTopic - Binary Lookup
+    V8 = 8;  // Added CommandConsumerStats - Client fetches broker side consumer stats
+    V9 = 9;  // Added end of topic notification
+    V10 = 10;// Added proxy to broker
+    V11 = 11;// C++ consumers before this version are not correctly handling the checksum field
+    V12 = 12;// Added get topic's last messageId from broker
              // Added CommandActiveConsumerChange
              // Added CommandGetTopicsOfNamespace
-    v13 = 13; // Schema-registry : added avro schema format for json
-    v14 = 14; // Add CommandAuthChallenge and CommandAuthResponse for mutual auth
+    V13 = 13; // Schema-registry : added avro schema format for json
+    V14 = 14; // Add CommandAuthChallenge and CommandAuthResponse for mutual auth
               // Added Key_Shared subscription
-    v15 = 15; // Add CommandGetOrCreateSchema and CommandGetOrCreateSchemaResponse
-    v16 = 16; // Add support for broker entry metadata
-    v17 = 17; // Added support ack receipt
-    v18 = 18; // Add client support for broker entry metadata
-    v19 = 19; // Add CommandTcClientConnectRequest and CommandTcClientConnectResponse
+    V15 = 15; // Add CommandGetOrCreateSchema and CommandGetOrCreateSchemaResponse
+    V16 = 16; // Add support for broker entry metadata
+    V17 = 17; // Added support ack receipt
+    V18 = 18; // Add client support for broker entry metadata
+    V19 = 19; // Add CommandTcClientConnectRequest and CommandTcClientConnectResponse
 }
 
 message CommandConnect {

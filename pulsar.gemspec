@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
 
   spec.platform = Gem::Platform::RUBY
 
-  spec.add_dependency 'protobuf', '~> 3.10'
+  spec.add_dependency 'google-protobuf', '~> 3.21'
 
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.6'

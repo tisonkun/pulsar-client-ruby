@@ -2,7 +2,7 @@ AllCops:
   NewCops: enable
   TargetRubyVersion: 2.6
   Exclude:
-    - 'lib/pulsar/proto/PulsarApi.pb.rb'
+    - 'lib/pulsar/proto/PulsarApi_pb.rb'
     - 'vendor/**/*'
 
 Layout/LineLength:

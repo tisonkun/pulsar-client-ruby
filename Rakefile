@@ -3,18 +3,17 @@
 require 'bundler/gem_tasks'
 require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
-load 'protobuf/tasks/compile.rake'
 
 desc 'Generate protobuf code.'
-task :compile do
-  ENV['PB_UPCASE_ENUMS'] = '1'
-  ::Rake::Task['protobuf:compile'].invoke(
-    'pulsar/proto',
-    'definitions',
-    'lib',
-    nil, # default plugin
-    nil  # default file extension
-  )
+task :generate do
+  command = []
+  command << 'protoc'
+  command << '-I' << './definitions'
+  command << '--ruby_out' << './lib'
+  command << Dir['definitions/**/*.proto'].join(' ')
+  real_command = command.join(' ')
+  puts(real_command)
+  system(real_command)
 end
 
 RSpec::Core::RakeTask.new(:spec)

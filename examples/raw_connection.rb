@@ -3,10 +3,11 @@
 
 require 'bundler/setup'
 require 'pulsar/client'
-require 'pulsar/proto/PulsarApi.pb'
+require 'pulsar/proto/PulsarApi_pb'
+require 'socket'
 
 # 1. Setup socket
-socket = Socket.new(:INET, :STREAM, 0)
+socket = Socket.new(Socket::AF_INET, Socket::SOCK_STREAM, 0)
 socket.setsockopt(Socket::IPPROTO_TCP, Socket::TCP_NODELAY, 1)
 socket.setsockopt(Socket::SOL_SOCKET, Socket::SO_KEEPALIVE, 1)
 sockaddr = Socket.sockaddr_in(6650, '127.0.0.1')
@@ -26,10 +27,10 @@ command = Pulsar::Proto::BaseCommand.new(
   type: Pulsar::Proto::BaseCommand::Type::CONNECT,
   connect: Pulsar::Proto::CommandConnect.new(
     client_version: "Pulsar-Client-Ruby-#{Pulsar::Client::VERSION}",
-    protocol_version: Pulsar::Proto::ProtocolVersion::V19.tag
+    protocol_version: Pulsar::Proto::ProtocolVersion::V19
   )
 )
-command_pb = command.to_proto.bytes
+command_pb = command.to_proto
 bytes = Array(command_pb.size + 4).pack('N')
 bytes += Array(command_pb.size).pack('N')
 bytes += command_pb
@@ -40,7 +41,7 @@ socket.write(bytes)
 # 4. Read response (CommandConnected)
 def read_size(socket)
   bytes = socket.read(4)
-  bytes&.unpack('N')&.first
+  bytes&.unpack('N')&.first.to_i
 end
 
 frame_size = read_size(socket)
