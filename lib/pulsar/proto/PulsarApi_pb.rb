@@ -246,6 +246,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :highest_sequence_id, :uint64, 6, default: 0
       optional :is_chunk, :bool, 7, default: false
       optional :marker, :bool, 8, default: false
+      optional :message_id, :message, 9, "pulsar.proto.MessageIdData"
     end
     add_message "pulsar.proto.CommandSendReceipt" do
       required :producer_id, :uint64, 1
@@ -706,26 +707,26 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :AuthMethodAthens, 2
     end
     add_enum "pulsar.proto.ProtocolVersion" do
-      value :V0, 0
-      value :V1, 1
-      value :V2, 2
-      value :V3, 3
-      value :V4, 4
-      value :V5, 5
-      value :V6, 6
-      value :V7, 7
-      value :V8, 8
-      value :V9, 9
-      value :V10, 10
-      value :V11, 11
-      value :V12, 12
-      value :V13, 13
-      value :V14, 14
-      value :V15, 15
-      value :V16, 16
-      value :V17, 17
-      value :V18, 18
-      value :V19, 19
+      value :v0, 0
+      value :v1, 1
+      value :v2, 2
+      value :v3, 3
+      value :v4, 4
+      value :v5, 5
+      value :v6, 6
+      value :v7, 7
+      value :v8, 8
+      value :v9, 9
+      value :v10, 10
+      value :v11, 11
+      value :v12, 12
+      value :v13, 13
+      value :v14, 14
+      value :v15, 15
+      value :v16, 16
+      value :v17, 17
+      value :v18, 18
+      value :v19, 19
     end
     add_enum "pulsar.proto.KeySharedMode" do
       value :AUTO_SPLIT, 0
