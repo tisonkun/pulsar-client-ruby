@@ -27,7 +27,7 @@ command = Pulsar::Proto::BaseCommand.new(
   type: Pulsar::Proto::BaseCommand::Type::CONNECT,
   connect: Pulsar::Proto::CommandConnect.new(
     client_version: "Pulsar-Client-Ruby-#{Pulsar::Client::VERSION}",
-    protocol_version: Pulsar::Proto::ProtocolVersion.resolve(:v19)
+    protocol_version: Pulsar::Proto::ProtocolVersion::V19
   )
 )
 command_pb = command.to_proto
